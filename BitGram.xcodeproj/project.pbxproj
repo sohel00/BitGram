@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1873BEB621EB378000DAD027 /* SignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1873BEB521EB378000DAD027 /* SignUpVC.swift */; };
 		18F3B03621E89B2700A855C4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F3B03521E89B2700A855C4 /* AppDelegate.swift */; };
 		18F3B03B21E89B2700A855C4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18F3B03921E89B2700A855C4 /* Main.storyboard */; };
 		18F3B04021E89B2A00A855C4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18F3B03E21E89B2A00A855C4 /* LaunchScreen.storyboard */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1873BEB521EB378000DAD027 /* SignUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpVC.swift; sourceTree = "<group>"; };
 		18F3B03221E89B2700A855C4 /* BitGram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BitGram.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18F3B03521E89B2700A855C4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		18F3B03A21E89B2700A855C4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -73,6 +75,7 @@
 			isa = PBXGroup;
 			children = (
 				18F3B04A21E89D4F00A855C4 /* LoginVC.swift */,
+				1873BEB521EB378000DAD027 /* SignUpVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -170,6 +173,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1873BEB621EB378000DAD027 /* SignUpVC.swift in Sources */,
 				18F3B04B21E89D4F00A855C4 /* LoginVC.swift in Sources */,
 				18F3B05021E8A21A00A855C4 /* Extensions.swift in Sources */,
 				18F3B03621E89B2700A855C4 /* AppDelegate.swift in Sources */,
