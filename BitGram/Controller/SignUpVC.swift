@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class SignUpVC: UIViewController {
 
@@ -22,6 +23,7 @@ class SignUpVC: UIViewController {
         tf.borderStyle = .roundedRect
         tf.backgroundColor = UIColor(white: 0, alpha: 0.03)
         tf.font = UIFont.systemFont(ofSize: 14)
+        tf.addTarget(self, action: #selector(formValidation), for: .editingChanged)
         return tf
     }()
     
@@ -29,8 +31,10 @@ class SignUpVC: UIViewController {
         let tf = UITextField()
         tf.placeholder = "Password"
         tf.borderStyle = .roundedRect
+        tf.isSecureTextEntry = true
         tf.backgroundColor = UIColor(white: 0, alpha: 0.03)
         tf.font = UIFont.systemFont(ofSize: 14)
+        tf.addTarget(self, action: #selector(formValidation), for: .editingChanged)
         return tf
     }()
     
@@ -58,6 +62,8 @@ class SignUpVC: UIViewController {
         button.setTitleColor(.white, for: .normal)
         button.backgroundColor = UIColor(red: 149/255, green: 204/255, blue: 244/255, alpha: 1)
         button.layer.cornerRadius = 5
+        button.isEnabled = false
+        button.addTarget(self, action: #selector(signUpPressed), for: .touchUpInside)
         return button
     }()
     
@@ -97,8 +103,36 @@ class SignUpVC: UIViewController {
         stackView.anchor(top: plusPhotoButton.bottomAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, paddingTop: 30, paddingLeft: 40, paddingBottom: 0, paddingRight: 40, width: 0, height: 240)
     }
     
+    @objc func signUpPressed() {
+        
+        guard let email = emailTextField.text else {return}
+        guard let password = passwordTextField.text else {return}
+        
+        Auth.auth().createUser(withEmail: email, password: password) { (result, error) in
+            if let error = error {
+                print("Failed: ", error.localizedDescription)
+            } else {
+                print("Success")
+            }
+        }
+    }
+    
     @objc func signInPressed() {
         _ = navigationController?.popViewController(animated: true)
+    }
+    
+    @objc func formValidation() {
+        
+        guard  emailTextField.hasText ,
+               passwordTextField.hasText else {
+                    
+                signUpButton.isEnabled = false
+                signUpButton.backgroundColor = UIColor(red: 149/255, green: 204/255, blue: 244/255, alpha: 1)
+                    return
+        }
+        
+        signUpButton.isEnabled = true
+        signUpButton.backgroundColor = UIColor(red: 17/255, green: 154/255, blue: 237/255, alpha: 1)
     }
     
 

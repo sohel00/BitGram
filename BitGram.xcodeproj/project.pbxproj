@@ -8,16 +8,20 @@
 
 /* Begin PBXBuildFile section */
 		1873BEB621EB378000DAD027 /* SignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1873BEB521EB378000DAD027 /* SignUpVC.swift */; };
+		1873BEB821EB583D00DAD027 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1873BEB721EB583D00DAD027 /* GoogleService-Info.plist */; };
 		18F3B03621E89B2700A855C4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F3B03521E89B2700A855C4 /* AppDelegate.swift */; };
 		18F3B03B21E89B2700A855C4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18F3B03921E89B2700A855C4 /* Main.storyboard */; };
 		18F3B04021E89B2A00A855C4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18F3B03E21E89B2A00A855C4 /* LaunchScreen.storyboard */; };
 		18F3B04B21E89D4F00A855C4 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F3B04A21E89D4F00A855C4 /* LoginVC.swift */; };
 		18F3B04D21E89E2B00A855C4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18F3B04C21E89E2B00A855C4 /* Assets.xcassets */; };
 		18F3B05021E8A21A00A855C4 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F3B04F21E8A21A00A855C4 /* Extensions.swift */; };
+		24294E9FCCFB067B19F1837C /* Pods_BitGram.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2ADCABD2BB826EA827CAAD6 /* Pods_BitGram.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		13AB8F54116E697B3B864E4D /* Pods-BitGram.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BitGram.release.xcconfig"; path = "Pods/Target Support Files/Pods-BitGram/Pods-BitGram.release.xcconfig"; sourceTree = "<group>"; };
 		1873BEB521EB378000DAD027 /* SignUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpVC.swift; sourceTree = "<group>"; };
+		1873BEB721EB583D00DAD027 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		18F3B03221E89B2700A855C4 /* BitGram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BitGram.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18F3B03521E89B2700A855C4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		18F3B03A21E89B2700A855C4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -26,6 +30,8 @@
 		18F3B04A21E89D4F00A855C4 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		18F3B04C21E89E2B00A855C4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../../../Downloads/Assets.xcassets; sourceTree = "<group>"; };
 		18F3B04F21E8A21A00A855C4 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		5E71CE888DB27FC088699E53 /* Pods-BitGram.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BitGram.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BitGram/Pods-BitGram.debug.xcconfig"; sourceTree = "<group>"; };
+		A2ADCABD2BB826EA827CAAD6 /* Pods_BitGram.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BitGram.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,6 +39,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				24294E9FCCFB067B19F1837C /* Pods_BitGram.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -44,6 +51,8 @@
 			children = (
 				18F3B03421E89B2700A855C4 /* BitGram */,
 				18F3B03321E89B2700A855C4 /* Products */,
+				7CD993682D402AF12057DA5C /* Pods */,
+				C137D3017C461A0EB84DC0B2 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -65,6 +74,7 @@
 				18F3B03521E89B2700A855C4 /* AppDelegate.swift */,
 				18F3B03921E89B2700A855C4 /* Main.storyboard */,
 				18F3B04C21E89E2B00A855C4 /* Assets.xcassets */,
+				1873BEB721EB583D00DAD027 /* GoogleService-Info.plist */,
 				18F3B03E21E89B2A00A855C4 /* LaunchScreen.storyboard */,
 				18F3B04121E89B2A00A855C4 /* Info.plist */,
 			);
@@ -102,6 +112,23 @@
 			path = Utils;
 			sourceTree = "<group>";
 		};
+		7CD993682D402AF12057DA5C /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				5E71CE888DB27FC088699E53 /* Pods-BitGram.debug.xcconfig */,
+				13AB8F54116E697B3B864E4D /* Pods-BitGram.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		C137D3017C461A0EB84DC0B2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A2ADCABD2BB826EA827CAAD6 /* Pods_BitGram.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -109,9 +136,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 18F3B04421E89B2A00A855C4 /* Build configuration list for PBXNativeTarget "BitGram" */;
 			buildPhases = (
+				B7D9C637A05092A48AE1A468 /* [CP] Check Pods Manifest.lock */,
 				18F3B02E21E89B2700A855C4 /* Sources */,
 				18F3B02F21E89B2700A855C4 /* Frameworks */,
 				18F3B03021E89B2700A855C4 /* Resources */,
+				33DEBE9EA309ACAFED4B0545 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -162,11 +191,65 @@
 			files = (
 				18F3B04021E89B2A00A855C4 /* LaunchScreen.storyboard in Resources */,
 				18F3B04D21E89E2B00A855C4 /* Assets.xcassets in Resources */,
+				1873BEB821EB583D00DAD027 /* GoogleService-Info.plist in Resources */,
 				18F3B03B21E89B2700A855C4 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		33DEBE9EA309ACAFED4B0545 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-BitGram/Pods-BitGram-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BitGram/Pods-BitGram-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B7D9C637A05092A48AE1A468 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-BitGram-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		18F3B02E21E89B2700A855C4 /* Sources */ = {
@@ -320,6 +403,7 @@
 		};
 		18F3B04521E89B2A00A855C4 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5E71CE888DB27FC088699E53 /* Pods-BitGram.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -338,6 +422,7 @@
 		};
 		18F3B04621E89B2A00A855C4 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 13AB8F54116E697B3B864E4D /* Pods-BitGram.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
