@@ -9,11 +9,13 @@
 import UIKit
 import Firebase
 
-class SignUpVC: UIViewController {
+class SignUpVC: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
+    var imageSelected: Bool = false
     let plusPhotoButton: UIButton = {
         let button = UIButton(type: .system)
         button.setImage(#imageLiteral(resourceName: "plus_photo").withRenderingMode(.alwaysOriginal), for: .normal)
+        button.addTarget(self, action: #selector(handleSelectProfilePhoto), for: .touchUpInside)
         return button
     }()
     
@@ -44,6 +46,7 @@ class SignUpVC: UIViewController {
         tf.borderStyle = .roundedRect
         tf.backgroundColor = UIColor(white: 0, alpha: 0.03)
         tf.font = UIFont.systemFont(ofSize: 14)
+        tf.addTarget(self, action: #selector(formValidation), for: .editingChanged)
         return tf
     }()
     
@@ -53,6 +56,7 @@ class SignUpVC: UIViewController {
         tf.borderStyle = .roundedRect
         tf.backgroundColor = UIColor(white: 0, alpha: 0.03)
         tf.font = UIFont.systemFont(ofSize: 14)
+        tf.addTarget(self, action: #selector(formValidation), for: .editingChanged)
         return tf
     }()
     
@@ -84,7 +88,7 @@ class SignUpVC: UIViewController {
         view.backgroundColor = .white
         
         view.addSubview(plusPhotoButton)
-        plusPhotoButton.anchor(top: view.topAnchor, left: nil, bottom: nil, right: nil, paddingTop: 40, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 140, height: 140)
+        plusPhotoButton.anchor(top: view.topAnchor, left: nil, bottom: nil, right: nil, paddingTop: 50, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 140, height: 140)
         plusPhotoButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         
         configureViewComponents()
@@ -103,17 +107,80 @@ class SignUpVC: UIViewController {
         stackView.anchor(top: plusPhotoButton.bottomAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, paddingTop: 30, paddingLeft: 40, paddingBottom: 0, paddingRight: 40, width: 0, height: 240)
     }
     
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        guard let pickedImage = info[UIImagePickerController.InfoKey.editedImage] as? UIImage else {
+            imageSelected = false
+            return
+        }
+        imageSelected = true
+        plusPhotoButton.layer.cornerRadius = plusPhotoButton.frame.height/2
+        plusPhotoButton.layer.masksToBounds = true
+        plusPhotoButton.layer.borderColor = UIColor.black.cgColor
+        plusPhotoButton.layer.borderWidth = 2
+        plusPhotoButton.setImage(pickedImage.withRenderingMode(.alwaysOriginal) , for: .normal)
+        
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    @objc func handleSelectProfilePhoto() {
+        
+        //Configure Image Picker
+        let imagePicker = UIImagePickerController()
+        imagePicker.delegate = self
+        imagePicker.allowsEditing = true
+        
+        //Present image picker
+        self.present(imagePicker, animated: true, completion: nil)
+    }
+    
     @objc func signUpPressed() {
         
         guard let email = emailTextField.text else {return}
         guard let password = passwordTextField.text else {return}
+        guard let fullName = fullNameTextField.text else {return}
+        guard let userName = usernameTextField.text else{return}
         
         Auth.auth().createUser(withEmail: email, password: password) { (result, error) in
             if let error = error {
                 print("Failed: ", error.localizedDescription)
-            } else {
-                print("Success")
             }
+            
+            //Set profile Image
+            guard let profileImage = self.plusPhotoButton.imageView?.image else {return}
+            //Upload Data
+            guard let uploadData = profileImage.jpegData(compressionQuality: 0.3) else {return}
+            // Place image in Firebase Storage
+            let fileName = UUID().uuidString
+            let storageRef = Storage.storage().reference().child("profile_image").child(fileName)
+            storageRef.putData(uploadData, metadata: nil, completion: { (metaData, error) in
+                
+                // handle error
+                if let error = error {
+                    print("Failed to upload image to Firebase Storage with error", error.localizedDescription)
+                    return
+                }
+                
+                storageRef.downloadURL(completion: { (downloadUrl, error) in
+                    guard let profileImageURL = downloadUrl?.absoluteString else {
+                        print("Failed: ")
+                        return }
+                    
+                    //user id
+                    guard let uid = result?.user.uid else {return}
+                    
+                    // Save user info to database
+                    let dictionaryValues = ["name": fullName,
+                                            "user":userName,
+                                            "profileImageURl": profileImageURL]
+                    let values = [uid:dictionaryValues]
+                    Database.database().reference().child("users").updateChildValues(values, withCompletionBlock: { (error, ref) in
+                        print("Success")
+                    })
+                })
+                
+                
+            })
+            
         }
     }
     
@@ -124,7 +191,10 @@ class SignUpVC: UIViewController {
     @objc func formValidation() {
         
         guard  emailTextField.hasText ,
-               passwordTextField.hasText else {
+               passwordTextField.hasText,
+               usernameTextField.hasText,
+               fullNameTextField.hasText,
+               imageSelected == true else {
                     
                 signUpButton.isEnabled = false
                 signUpButton.backgroundColor = UIColor(red: 149/255, green: 204/255, blue: 244/255, alpha: 1)
