@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		180CE94521EDB06B006EB1AB /* MainTabVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180CE94421EDB06B006EB1AB /* MainTabVC.swift */; };
+		180CE94B21EE0CED006EB1AB /* FeedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180CE94A21EE0CED006EB1AB /* FeedVC.swift */; };
+		180CE94D21EE0D14006EB1AB /* SearchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180CE94C21EE0D14006EB1AB /* SearchVC.swift */; };
+		180CE94F21EE0D59006EB1AB /* UploadPostVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180CE94E21EE0D59006EB1AB /* UploadPostVC.swift */; };
+		180CE95121EE0D8B006EB1AB /* NotificationsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180CE95021EE0D8B006EB1AB /* NotificationsVC.swift */; };
+		180CE95321EE0DD4006EB1AB /* UserProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180CE95221EE0DD4006EB1AB /* UserProfileVC.swift */; };
 		1873BEB621EB378000DAD027 /* SignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1873BEB521EB378000DAD027 /* SignUpVC.swift */; };
 		1873BEB821EB583D00DAD027 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1873BEB721EB583D00DAD027 /* GoogleService-Info.plist */; };
 		18F3B03621E89B2700A855C4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F3B03521E89B2700A855C4 /* AppDelegate.swift */; };
@@ -20,6 +26,12 @@
 
 /* Begin PBXFileReference section */
 		13AB8F54116E697B3B864E4D /* Pods-BitGram.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BitGram.release.xcconfig"; path = "Pods/Target Support Files/Pods-BitGram/Pods-BitGram.release.xcconfig"; sourceTree = "<group>"; };
+		180CE94421EDB06B006EB1AB /* MainTabVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabVC.swift; sourceTree = "<group>"; };
+		180CE94A21EE0CED006EB1AB /* FeedVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedVC.swift; sourceTree = "<group>"; };
+		180CE94C21EE0D14006EB1AB /* SearchVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchVC.swift; sourceTree = "<group>"; };
+		180CE94E21EE0D59006EB1AB /* UploadPostVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadPostVC.swift; sourceTree = "<group>"; };
+		180CE95021EE0D8B006EB1AB /* NotificationsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsVC.swift; sourceTree = "<group>"; };
+		180CE95221EE0DD4006EB1AB /* UserProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileVC.swift; sourceTree = "<group>"; };
 		1873BEB521EB378000DAD027 /* SignUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpVC.swift; sourceTree = "<group>"; };
 		1873BEB721EB583D00DAD027 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		18F3B03221E89B2700A855C4 /* BitGram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BitGram.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -86,6 +98,12 @@
 			children = (
 				18F3B04A21E89D4F00A855C4 /* LoginVC.swift */,
 				1873BEB521EB378000DAD027 /* SignUpVC.swift */,
+				180CE94421EDB06B006EB1AB /* MainTabVC.swift */,
+				180CE94A21EE0CED006EB1AB /* FeedVC.swift */,
+				180CE94C21EE0D14006EB1AB /* SearchVC.swift */,
+				180CE94E21EE0D59006EB1AB /* UploadPostVC.swift */,
+				180CE95021EE0D8B006EB1AB /* NotificationsVC.swift */,
+				180CE95221EE0DD4006EB1AB /* UserProfileVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -258,10 +276,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				180CE94B21EE0CED006EB1AB /* FeedVC.swift in Sources */,
+				180CE95121EE0D8B006EB1AB /* NotificationsVC.swift in Sources */,
+				180CE94F21EE0D59006EB1AB /* UploadPostVC.swift in Sources */,
+				180CE95321EE0DD4006EB1AB /* UserProfileVC.swift in Sources */,
 				1873BEB621EB378000DAD027 /* SignUpVC.swift in Sources */,
 				18F3B04B21E89D4F00A855C4 /* LoginVC.swift in Sources */,
 				18F3B05021E8A21A00A855C4 /* Extensions.swift in Sources */,
+				180CE94521EDB06B006EB1AB /* MainTabVC.swift in Sources */,
 				18F3B03621E89B2700A855C4 /* AppDelegate.swift in Sources */,
+				180CE94D21EE0D14006EB1AB /* SearchVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class LoginVC: UIViewController {
     
@@ -28,6 +29,7 @@ class LoginVC: UIViewController {
         tf.borderStyle = .roundedRect
         tf.backgroundColor = UIColor(white: 0, alpha: 0.03)
         tf.font = UIFont.systemFont(ofSize: 14)
+        tf.addTarget(self, action: #selector(formValidation), for: .editingChanged)
         return tf
     }()
     
@@ -37,6 +39,8 @@ class LoginVC: UIViewController {
         tf.borderStyle = .roundedRect
         tf.backgroundColor = UIColor(white: 0, alpha: 0.03)
         tf.font = UIFont.systemFont(ofSize: 14)
+        tf.addTarget(self, action: #selector(formValidation), for: .editingChanged)
+        tf.isSecureTextEntry = true
         return tf
     }()
     
@@ -46,6 +50,8 @@ class LoginVC: UIViewController {
         button.setTitleColor(.white, for: .normal)
         button.backgroundColor = UIColor(red: 149/255, green: 204/255, blue: 244/255, alpha: 1)
         button.layer.cornerRadius = 5
+        button.addTarget(self, action: #selector(handleLogin), for: .touchUpInside)
+        button.isEnabled = false
         return button
     }()
     
@@ -81,6 +87,43 @@ class LoginVC: UIViewController {
         stackView.spacing = 10
         view.addSubview(stackView)
         stackView.anchor(top: logoContainerView.bottomAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, paddingTop: 40, paddingLeft: 40, paddingBottom: 0, paddingRight: 40, width: 0, height: 140)
+    }
+    
+    @objc func handleLogin(){
+        
+        //Grabbing email and password and logging user in
+        guard let email = emailTextField.text,
+            let password = passwordTextField.text else {return}
+        
+        //Firebase login
+        Auth.auth().signIn(withEmail: email, password: password) { (result, error) in
+            
+            //handling error
+            if let error = error {
+                print("Failed: ", error.localizedDescription)
+                return
+            }
+            
+            //Handle success
+            print("Success")
+            
+            let mainTabVC = MainTabVC()
+            self.present(mainTabVC, animated: true, completion: nil)
+        }
+    }
+    
+    @objc func formValidation(){
+        
+        //Ensures that email and password textfields has text
+        guard emailTextField.hasText,
+            passwordTextField.hasText else {
+                loginButton.backgroundColor = UIColor(red: 149/255, green: 204/255, blue: 244/255, alpha: 1)
+                loginButton.isEnabled = false
+                return
+            }
+        
+        loginButton.isEnabled = true
+        loginButton.backgroundColor = UIColor(red: 17/255, green: 154/255, blue: 237/255, alpha: 1)
     }
     
     @objc func dontHaveAnAccountPressed(){
