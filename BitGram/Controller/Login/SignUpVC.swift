@@ -177,10 +177,7 @@ class SignUpVC: UIViewController, UIImagePickerControllerDelegate, UINavigationC
                         print("Success")
                     })
                 })
-                
-                
             })
-            
         }
     }
     

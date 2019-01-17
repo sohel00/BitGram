@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class MainTabVC: UITabBarController, UITabBarControllerDelegate {
 
@@ -18,6 +19,9 @@ class MainTabVC: UITabBarController, UITabBarControllerDelegate {
         
         //Configure View Controllers
         configureViewControllers()
+        
+        //User Validation
+        checkUserLoggedIn()
     }
     
 
@@ -25,7 +29,7 @@ class MainTabVC: UITabBarController, UITabBarControllerDelegate {
     func configureViewControllers(){
         
         //home feed controller
-        let feedVC = constructNavController(selectedImage: #imageLiteral(resourceName: "home_unselected"), unSelectedImage: #imageLiteral(resourceName: "home_selected"), rootViewController: FeedVC(collectionViewLayout: UICollectionViewFlowLayout()))
+        let feedVC = constructNavController(selectedImage: #imageLiteral(resourceName: "home_selected"), unSelectedImage: #imageLiteral(resourceName: "home_unselected"), rootViewController: FeedVC(collectionViewLayout: UICollectionViewFlowLayout()))
         
         //search feed controller
         let searchVC = constructNavController(selectedImage: #imageLiteral(resourceName: "search_selected"), unSelectedImage: #imageLiteral(resourceName: "search_unselected"), rootViewController: SearchVC())
@@ -57,6 +61,19 @@ class MainTabVC: UITabBarController, UITabBarControllerDelegate {
         navController.navigationBar.tintColor = .black
         
         return navController
+    }
+    
+    func checkUserLoggedIn(){
+        
+        if Auth.auth().currentUser == nil {
+            //Presenting Login VC
+            DispatchQueue.main.async {
+                let logInVC = LoginVC()
+                let navController = UINavigationController(rootViewController: logInVC)
+                self.present(navController, animated: true, completion: nil)
+            }
+        }
+        return
     }
     
 
