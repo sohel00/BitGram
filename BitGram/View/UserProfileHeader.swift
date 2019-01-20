@@ -10,6 +10,14 @@ import UIKit
 
 class UserProfileHeader: UICollectionViewCell {
     
+    var user: User? {
+        
+        didSet {
+            let fullName = user?.name
+            self.nameLabel.text = fullName
+        }
+    }
+    
     let profileIamgeView: UIImageView = {
         let iv = UIImageView()
         iv.contentMode = .scaleAspectFill
@@ -20,7 +28,6 @@ class UserProfileHeader: UICollectionViewCell {
     
     let nameLabel: UILabel = {
        let label = UILabel()
-        label.text = "Sohel Dhengre"
         label.font = UIFont.boldSystemFont(ofSize: 12)
         return label
     }()

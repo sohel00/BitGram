@@ -16,6 +16,7 @@
 		1873BEB621EB378000DAD027 /* SignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1873BEB521EB378000DAD027 /* SignUpVC.swift */; };
 		1873BEB821EB583D00DAD027 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1873BEB721EB583D00DAD027 /* GoogleService-Info.plist */; };
 		18E18C4621F1AB640029CA83 /* UserProfileHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E18C4521F1AB640029CA83 /* UserProfileHeader.swift */; };
+		18E2EEF321F49E280084E0E8 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E2EEF221F49E280084E0E8 /* User.swift */; };
 		18F3B03621E89B2700A855C4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F3B03521E89B2700A855C4 /* AppDelegate.swift */; };
 		18F3B03B21E89B2700A855C4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18F3B03921E89B2700A855C4 /* Main.storyboard */; };
 		18F3B04021E89B2A00A855C4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18F3B03E21E89B2A00A855C4 /* LaunchScreen.storyboard */; };
@@ -36,6 +37,7 @@
 		1873BEB521EB378000DAD027 /* SignUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpVC.swift; sourceTree = "<group>"; };
 		1873BEB721EB583D00DAD027 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		18E18C4521F1AB640029CA83 /* UserProfileHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileHeader.swift; sourceTree = "<group>"; };
+		18E2EEF221F49E280084E0E8 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		18F3B03221E89B2700A855C4 /* BitGram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BitGram.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18F3B03521E89B2700A855C4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		18F3B03A21E89B2700A855C4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -64,7 +66,6 @@
 			isa = PBXGroup;
 			children = (
 				180CE95221EE0DD4006EB1AB /* UserProfileVC.swift */,
-				18E18C4521F1AB640029CA83 /* UserProfileHeader.swift */,
 			);
 			path = UserProfile;
 			sourceTree = "<group>";
@@ -162,6 +163,7 @@
 		18F3B04821E89D0D00A855C4 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				18E18C4521F1AB640029CA83 /* UserProfileHeader.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -169,6 +171,7 @@
 		18F3B04921E89D1900A855C4 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				18E2EEF221F49E280084E0E8 /* User.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -335,6 +338,7 @@
 				1873BEB621EB378000DAD027 /* SignUpVC.swift in Sources */,
 				18F3B04B21E89D4F00A855C4 /* LoginVC.swift in Sources */,
 				18F3B05021E8A21A00A855C4 /* Extensions.swift in Sources */,
+				18E2EEF321F49E280084E0E8 /* User.swift in Sources */,
 				180CE94521EDB06B006EB1AB /* MainTabVC.swift in Sources */,
 				18F3B03621E89B2700A855C4 /* AppDelegate.swift in Sources */,
 				180CE94D21EE0D14006EB1AB /* SearchVC.swift in Sources */,
