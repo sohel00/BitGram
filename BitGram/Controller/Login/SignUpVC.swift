@@ -138,7 +138,7 @@ class SignUpVC: UIViewController, UIImagePickerControllerDelegate, UINavigationC
         guard let email = emailTextField.text else {return}
         guard let password = passwordTextField.text else {return}
         guard let fullName = fullNameTextField.text else {return}
-        guard let userName = usernameTextField.text else{return}
+        guard let userName = usernameTextField.text?.lowercased() else {return}
         
         Auth.auth().createUser(withEmail: email, password: password) { (result, error) in
             if let error = error {
@@ -174,7 +174,13 @@ class SignUpVC: UIViewController, UIImagePickerControllerDelegate, UINavigationC
                                             "profileImageURl": profileImageURL]
                     let values = [uid:dictionaryValues]
                     Database.database().reference().child("users").updateChildValues(values, withCompletionBlock: { (error, ref) in
-                        print("Success")
+                        
+                        guard let mainTabVC = UIApplication.shared.keyWindow?.rootViewController as? MainTabVC else {return}
+                        // Configure tab bar controller
+                        mainTabVC.configureViewControllers()
+                        
+                        //Dismiss Login View Controller
+                        self.dismiss(animated: true, completion: nil)
                     })
                 })
             })
