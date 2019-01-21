@@ -26,7 +26,7 @@ class User {
             self.name = name
         }
         
-        if let profileImageURL = dictionary["profileImageURL"] as? String{
+        if let profileImageURL = dictionary["profileImageURl"] as? String{
             self.profileImageURL = profileImageURL
         }
     }

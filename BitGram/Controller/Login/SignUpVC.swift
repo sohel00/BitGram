@@ -150,7 +150,7 @@ class SignUpVC: UIViewController, UIImagePickerControllerDelegate, UINavigationC
             //Upload Data
             guard let uploadData = profileImage.jpegData(compressionQuality: 0.3) else {return}
             // Place image in Firebase Storage
-            let fileName = UUID().uuidString
+            let fileName = NSUUID().uuidString
             let storageRef = Storage.storage().reference().child("profile_image").child(fileName)
             storageRef.putData(uploadData, metadata: nil, completion: { (metaData, error) in
                 
