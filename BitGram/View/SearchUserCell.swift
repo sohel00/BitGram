@@ -11,6 +11,20 @@ import UIKit
 class SearchUserCell: UITableViewCell {
 
     //Mark: Properties
+    
+    var user:User?  {
+        didSet{
+            
+            guard let profileImageURL = user?.profileImageURL else {return}
+            guard let userName = user?.userName else {return}
+            guard let fullName = user?.name else {return}
+            
+            profileIamgeView.loadImage(with: profileImageURL)
+            self.textLabel?.text = userName
+            self.detailTextLabel?.text = fullName
+        }
+    }
+    
     let profileIamgeView: UIImageView = {
         let iv = UIImageView()
         iv.contentMode = .scaleAspectFill
