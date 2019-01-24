@@ -53,8 +53,16 @@ class SearchVC: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
         let user = users[indexPath.row]
-        print(user.userName)
+        
+        //Create instance of userProfileVC
+        let userProfileVC = UserProfileVC(collectionViewLayout: UICollectionViewFlowLayout())
+        
+        userProfileVC.userToLoadFromSearchVC = user
+        
+        //Pushing userProfileViewController
+        navigationController?.pushViewController(userProfileVC, animated: true)
     }
     
     //MARK: Handlers
